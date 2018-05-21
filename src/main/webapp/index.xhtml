@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:include src="template/head.xhtml"/>
+
+<h:body>
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <!--<div id="topPanel" class="col-10"></div>-->
+
+
+            <div class="col-2 bg-light sidebar">
+                <div style="position: fixed">
+                    <h:form>
+                        <div class="logo mt-2 mb-3">
+                            <p:commandLink class="nav-link text-white text-center" value="LOGO"/>
+                        </div>
+                        <div class="leftNavigation">
+                            <ul class="nav flex-column">
+                                <ui:repeat value="#{indexController.loadNavigation()}" var="nav">
+                                    <li class="nav-item">
+                                        <h:commandLink action="#{nav}" value="#{nav}" class="nav-link"/>
+                                    </li>
+                                </ui:repeat>
+                            </ul>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+
+
+            <div class="col-10  mt-2">
+
+                <h:dataTable var="price" value="#{indexController.priceList}" class="table" style="margin-bottom: 0;">
+                    <h:column>
+                        <div ><h:outputText value="#{price.name}"/></div>
+                    </h:column>
+                    <h:column >
+                        <h:outputText value="#{price.cost}"/>
+                    </h:column>
+                </h:dataTable>
+                <table class="table" style="background: gray">
+                    <tr>
+                        <td style="width: 50%;">Итого 2</td>
+                        <td>800</td>
+                    </tr>
+                </table>
+
+                <h:form>
+
+                    <h:message for="testValidator" style="color:red" />
+
+                    <br/>
+                    <label for="testValidator" class="mr-2">Валидатор проверка на число - </label>
+                    <p:inputText value="test validator"  id="testValidator" validator="numberValidator"/>
+
+                    <h:commandButton value="test"/>
+
+                </h:form>
+
+
+            </div>
+        </div>
+
+    </div>
+</h:body>
+</html>
