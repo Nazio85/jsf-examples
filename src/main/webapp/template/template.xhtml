@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Title</title>
+    <h:outputStylesheet library="css" name="theme.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
+    <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+</h:head>
+
+<h:body>
+
+    <div class="row" style="height: 100%;">
+        <div class="col-2 bg-dark sidebar">
+            <div style="position: fixed">
+                <h:form styleClass="form-group">
+                    <div class="logo mt-2 mb-3">
+                        <p:commandLink class="nav-link text-white text-center" value="LOGO" styleClass="form-control"/>
+                    </div>
+                    <div class="leftNavigation">
+                        <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <h:commandLink action="/page/index.xhtml" value="Home" class="nav-link"/>
+                                    <h:commandLink action="/page/validation.xhtml" value="Validation" class="nav-link"/>
+                                    <h:commandLink action="/page/converter.xhtml" value="Converter" class="nav-link"/>
+                                </li>
+                        </ul>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+
+        <div class="col-10  mt-2">
+
+            <ui:insert name="content">
+                Standart content
+            </ui:insert>
+
+        </div>
+    </div>
+</h:body>
+</html>

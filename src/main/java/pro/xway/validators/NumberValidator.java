@@ -15,8 +15,8 @@ public class NumberValidator implements Validator {
         try {
             Integer.parseInt(s);
         } catch (Exception e){
-            FacesMessage facesMessage = new FacesMessage("not number");
-            facesMessage.setSeverity(FacesMessage.SEVERITY_ERROR);
+            FacesMessage facesMessage = new FacesMessage("not number"); // Name for Message
+            facesMessage.setSeverity(FacesMessage.SEVERITY_ERROR); // Error type
             throw new ValidatorException(facesMessage);
         }
     }

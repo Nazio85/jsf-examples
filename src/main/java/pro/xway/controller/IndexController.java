@@ -7,22 +7,14 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Named
 @ApplicationScoped
 public class IndexController {
     private List<Price> priceList = new ArrayList<>();
-
-
-    public List<String> loadNavigation(){
-        List<String> list = new ArrayList<>();
-        list.add("Главная");
-        list.add("Категории");
-        list.add("Товары");
-        list.add("Заказы");
-        return list;
-    }
 
     public IndexController() {
     }
